@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CourseWork.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CourseWork"
+    >
+    
+    <ShellContent
+        Title="Search"
+        ContentTemplate="{DataTemplate local:Search}"
+        />
+   
+
+    
+    <ShellContent
+        Title="Help"
+        ContentTemplate="{DataTemplate local:help}"
+        />
+     
+
+    <ShellContent
+        Title="Profile"
+        ContentTemplate="{DataTemplate local:Profile}"
+        />
+
+    <ShellContent
+        Title="Tourhanter"
+        ContentTemplate="{DataTemplate local:Tourhanter}"/>
+
+</Shell>

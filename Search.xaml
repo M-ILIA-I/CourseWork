@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseWork.Search">
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Row="0" Color="#00BFFF"/>
+            
+            <VerticalStackLayout Grid.Row="0">
+                <Label Text="My Tour agency name" VerticalOptions="Center" HorizontalOptions="Center" Margin="30"/>
+                <Button Text="Where I can fly to"/>
+            </VerticalStackLayout>
+
+            <BoxView Grid.Row="1" Color="#F5F5F5" />
+
+            <VerticalStackLayout Grid.Row="1" HorizontalOptions="Center">
+                <ScrollView Grid.Row="1" Orientation="Horizontal">
+                    <HorizontalStackLayout Padding="15" HorizontalOptions="Center">
+                        <Button Text="Tours" ImageSource="palm.png" Style="{StaticResource buttonStyle}"/>
+                        <Button Text="Hot tours" ImageSource="fire.png" Style="{StaticResource buttonStyle}"/>
+                        <Button Text="Train tours" ImageSource="train.png" Style="{StaticResource buttonStyle}"/>
+                        <Button Text="Hotels" ImageSource="hotel.png" Style="{StaticResource buttonStyle}"/>
+                    </HorizontalStackLayout>
+                </ScrollView>
+
+                
+                    <HorizontalStackLayout Spacing="420" HorizontalOptions="Center">
+                    <Picker Background="White"
+                            HorizontalOptions="Center"
+                            Title="Departure city"
+                            TextColor="Black" TitleColor="{StaticResource defaultColor}"/>
+                    <Picker Background="White"
+                            Title="Country, resort"
+                            SelectedItem="Egypt"
+                            TextColor="Black" TitleColor="{StaticResource defaultColor}"/>
+                </HorizontalStackLayout>
+                
+                <BoxView Color="Black" HeightRequest="1" WidthRequest="1200" Margin="5"/>
+    
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        
+                    </Grid.ColumnDefinitions>
+                    <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="5">
+                        <Label HorizontalOptions="Center" Text="Departure date" TextColor="{StaticResource defaultColor}"/>
+                        <DatePicker HorizontalOptions="Center" TextColor="Black" Background="White" FontFamily="FamiljenGrotesk-Italic"/>
+                    </VerticalStackLayout>
+                        
+                    <BoxView Grid.Column="0" Color="Black" HeightRequest="70" WidthRequest="1" HorizontalOptions="End" />
+
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                        <Label Text="Number of days" TextColor="Gray" />
+                        <Slider Minimum="0" Maximum="8900" Value="10" BackgroundColor="Orange" ThumbColor="Green"/>
+                    </VerticalStackLayout>
+                </Grid>
+
+                <BoxView Color="Black" HeightRequest="1" WidthRequest="1200" Margin="5"/>
+
+
+                <Button Text="Кто едет"/>
+
+                <BoxView Color="Black" HeightRequest="1" WidthRequest="1200" Margin="5"/>
+
+
+                <Button Text="Find Tours"/>
+            </VerticalStackLayout>
+
+            
+        </Grid>
+
+        
+    </ScrollView>
+
+</ContentPage>

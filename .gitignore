@@ -1,0 +1,8 @@
+*.csproj
+*.user
+*.sln
+bin
+obj
+*.vs
+Platforms
+Properties
