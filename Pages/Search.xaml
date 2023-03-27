@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CourseWork.Search">
+             x:Class="CourseWork.Search"
+             Loaded="PickerPulingData">
 
     <ScrollView>
         <Grid>
@@ -24,7 +25,7 @@
 
             <VerticalStackLayout Grid.Row="1" HorizontalOptions="Center">
                 <ScrollView Grid.Row="1" Orientation="Horizontal">
-                    <HorizontalStackLayout Padding="15" HorizontalOptions="Center">
+                    <HorizontalStackLayout Padding="15" HorizontalOptions="Center" Spacing="10">
                         <Button Text="Tours" ImageSource="palm.png" Style="{StaticResource buttonStyle}"/>
                         <Button Text="Hot tours" ImageSource="fire.png" Style="{StaticResource buttonStyle}"/>
                         <Button Text="Train tours" ImageSource="train.png" Style="{StaticResource buttonStyle}"/>
@@ -33,14 +34,20 @@
                 </ScrollView>
 
                 
-                    <HorizontalStackLayout Spacing="420" HorizontalOptions="Center">
-                    <Picker Background="White"
-                            HorizontalOptions="Center"
+                <HorizontalStackLayout HorizontalOptions="Start">
+                    <Picker x:Name="DeparturePicker"
+                            Background="Red"
+                            HorizontalOptions="Start"
+                            Margin="100,0,0,0"
+                            WidthRequest="400"
                             Title="Departure city"
                             TextColor="Black" TitleColor="{StaticResource defaultColor}"/>
-                    <Picker Background="White"
-                            Title="Country, resort"
+                    <Picker x:Name="ResortPicker"
+                            Background="White"
+                            Title="Country resort"
                             SelectedItem="Egypt"
+                            WidthRequest="400"
+                            Margin="150,0,0,0"
                             TextColor="Black" TitleColor="{StaticResource defaultColor}"/>
                 </HorizontalStackLayout>
                 
@@ -52,16 +59,16 @@
                         <ColumnDefinition/>
                         
                     </Grid.ColumnDefinitions>
-                    <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="5">
+                    <VerticalStackLayout Grid.Column="0" HorizontalOptions="Start" Spacing="5" Margin="250,0,0,0">
                         <Label HorizontalOptions="Center" Text="Departure date" TextColor="{StaticResource defaultColor}"/>
                         <DatePicker HorizontalOptions="Center" TextColor="Black" Background="White" FontFamily="FamiljenGrotesk-Italic"/>
                     </VerticalStackLayout>
                         
                     <BoxView Grid.Column="0" Color="Black" HeightRequest="70" WidthRequest="1" HorizontalOptions="End" />
 
-                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
-                        <Label Text="Number of days" TextColor="Gray" />
-                        <Slider Minimum="0" Maximum="8900" Value="10" BackgroundColor="Orange" ThumbColor="Green"/>
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="10">
+                        <Label x:Name="DaysLAbel" Text="Number of days 7" TextColor="Black" />
+                        <Slider Minimum="0" Maximum="30" Value="7" BackgroundColor="Orange" ThumbColor="Green" WidthRequest="400" ValueChanged="OnSliderValueChanged"/>
                     </VerticalStackLayout>
                 </Grid>
 
