@@ -21,5 +21,17 @@ public partial class Search : ContentPage
         ResortPicker.ItemsSource = resortDBService.GetResortCapitals();
         DeparturePicker.ItemsSource = departureDBService.GetDepartureCapitals();
     }
+
+    private void AdultSlider(object sender, ValueChangedEventArgs e)
+    {
+        int value = (int)e.NewValue;
+        AdultLAbel.Text = String.Format("Numbers of adult persons {0}", value);
+    }
+
+    private void ChildSlider(object sender, ValueChangedEventArgs e)
+    {
+        int value = (int)e.NewValue;
+        ChildLAbel.Text = String.Format("Numbers of children {0}", value);
+    }
 }
 

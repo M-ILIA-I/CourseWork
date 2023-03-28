@@ -1,3 +1,5 @@
+
+
 namespace CourseWork;
 
 public partial class Profile : ContentPage
@@ -6,4 +8,5 @@ public partial class Profile : ContentPage
 	{
 		InitializeComponent();
 	}
+
 }

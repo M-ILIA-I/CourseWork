@@ -7,8 +7,9 @@
     <ScrollView>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2.5*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -17,13 +18,15 @@
             <BoxView Grid.Row="0" Color="#00BFFF"/>
             
             <VerticalStackLayout Grid.Row="0">
-                <Label Text="My Tour agency name" VerticalOptions="Center" HorizontalOptions="Center" Margin="30"/>
-                <Button Text="Where I can fly to"/>
+                <Label Text="My Tour agency name" HorizontalOptions="Center" Margin="0,20,0,50" TextColor="Black"/>
+                
+                <Button Text="Where I can fly to?"  Background="Orange" Opacity="1" TextColor="Black" HorizontalOptions="Center" />
+                
             </VerticalStackLayout>
 
             <BoxView Grid.Row="1" Color="#F5F5F5" />
 
-            <VerticalStackLayout Grid.Row="1" HorizontalOptions="Center">
+            <VerticalStackLayout Grid.Row="1" HorizontalOptions="Center" >
                 <ScrollView Grid.Row="1" Orientation="Horizontal">
                     <HorizontalStackLayout Padding="15" HorizontalOptions="Center" Spacing="10">
                         <Button Text="Tours" ImageSource="palm.png" Style="{StaticResource buttonStyle}"/>
@@ -33,21 +36,25 @@
                     </HorizontalStackLayout>
                 </ScrollView>
 
-                
-                <HorizontalStackLayout HorizontalOptions="Start">
+                <HorizontalStackLayout HorizontalOptions="Start" Margin="0,50,0,0">
                     <Picker x:Name="DeparturePicker"
-                            Background="Red"
+                            Background="White"
+                            
                             HorizontalOptions="Start"
-                            Margin="100,0,0,0"
-                            WidthRequest="400"
+                            Margin="200,0,0,0"
+                            WidthRequest="200"
+                            HorizontalTextAlignment="Center"
                             Title="Departure city"
-                            TextColor="Black" TitleColor="{StaticResource defaultColor}"/>
+                            TextColor="Black"
+                            TitleColor="{StaticResource defaultColor}"/>
                     <Picker x:Name="ResortPicker"
                             Background="White"
+                            HorizontalTextAlignment="Center"
                             Title="Country resort"
                             SelectedItem="Egypt"
-                            WidthRequest="400"
-                            Margin="150,0,0,0"
+                            FlowDirection="RightToLeft"
+                            WidthRequest="200"
+                            Margin="600,0,0,0"
                             TextColor="Black" TitleColor="{StaticResource defaultColor}"/>
                 </HorizontalStackLayout>
                 
@@ -57,33 +64,57 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
-                        
                     </Grid.ColumnDefinitions>
-                    <VerticalStackLayout Grid.Column="0" HorizontalOptions="Start" Spacing="5" Margin="250,0,0,0">
-                        <Label HorizontalOptions="Center" Text="Departure date" TextColor="{StaticResource defaultColor}"/>
-                        <DatePicker HorizontalOptions="Center" TextColor="Black" Background="White" FontFamily="FamiljenGrotesk-Italic"/>
+                    <VerticalStackLayout Grid.Column="0" HorizontalOptions="Start" Spacing="5" Margin="200,0,0,0">
+                        <Label HorizontalOptions="Center" Text="Departure date" TextColor="{StaticResource defaultColor}" Margin="0,0,100,0" FontAttributes="Bold"/>
+                        <DatePicker HorizontalOptions="Center" TextColor="Black" Background="White" FontFamily="FamiljenGrotesk-Italic" WidthRequest="200" />
                     </VerticalStackLayout>
-                        
-                    <BoxView Grid.Column="0" Color="Black" HeightRequest="70" WidthRequest="1" HorizontalOptions="End" />
 
-                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="10">
-                        <Label x:Name="DaysLAbel" Text="Number of days 7" TextColor="Black" />
-                        <Slider Minimum="0" Maximum="30" Value="7" BackgroundColor="Orange" ThumbColor="Green" WidthRequest="400" ValueChanged="OnSliderValueChanged"/>
+                    <BoxView Grid.Column="0" Color="Black" HeightRequest="70" WidthRequest="1" HorizontalOptions="End"/>
+
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="10" Margin="0,10,0,0">
+                        <Label x:Name="DaysLAbel" Text="Number of days 7" TextColor="Black" Margin="150,0,5,0" FontAttributes="Bold"/>
+                        <Stepper Minimum="0" Maximum="30" Value="7"  BackgroundColor="Orange" Margin="220,0,0,0" ValueChanged="OnSliderValueChanged"/>
                     </VerticalStackLayout>
                 </Grid>
 
-                <BoxView Color="Black" HeightRequest="1" WidthRequest="1200" Margin="5"/>
+                <BoxView Color="Black" WidthRequest="1400" HeightRequest="1" Margin=" 5"/>
 
+                <Label HorizontalOptions="Center" Text="Quantity of tickets" TextColor="Black" FontAttributes="Bold" FontFamily="CourierNew"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-                <Button Text="Кто едет"/>
+                    <VerticalStackLayout Grid.Column="0" Spacing="10" >
+                        <Label x:Name="AdultLAbel" Text="Number of adults 2" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,0,40,0"/>
+                        <Slider Minimum="0" Maximum="7" Value="2" MinimumTrackColor="#00BFFF"  BackgroundColor="White" ThumbColor="Orange" WidthRequest="300" ValueChanged="AdultSlider"/>
+                    </VerticalStackLayout>
 
-                <BoxView Color="Black" HeightRequest="1" WidthRequest="1200" Margin="5"/>
-
-
-                <Button Text="Find Tours"/>
+                    <VerticalStackLayout Grid.Column="1" Spacing="10">
+                        <Label x:Name="ChildLAbel" Text="Number of younkeys 1" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <Slider Minimum="0" Maximum="7" Value="2" MinimumTrackColor="#00BFFF" BackgroundColor="White" ThumbColor="Orange" WidthRequest="300" ValueChanged="ChildSlider" Margin="0,0,0,0"/>
+                    </VerticalStackLayout>
+                </Grid>
+                
+                    
             </VerticalStackLayout>
 
-            
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <BoxView Grid.Row="0" Color="#00BFFF"/>
+               
+                <Button Text="Find Tour" BackgroundColor="Orange" WidthRequest="400" Grid.Row="0" HeightRequest="20"/>
+                
+            </Grid>
         </Grid>
 
         
