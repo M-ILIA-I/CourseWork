@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseWork.SignInPage"
+             Title="SignInPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:handless="clr-namespace:CourseWork"
+             Background="#F5F5F5">
+    <Grid RowDefinitions="1*,8*,1*">
+        <Frame BackgroundColor="Orange" Grid.Row="0" HorizontalOptions="EndAndExpand"
+               Padding="0" 
+               Margin="0,-80,-80,0"
+               HeightRequest="250"
+               WidthRequest="250" CornerRadius="125">
+
+        </Frame>
+
+        <Frame BackgroundColor="#00BFFF" Grid.Row="0" HorizontalOptions="EndAndExpand"
+               Padding="0" 
+               Margin="0,-120,-120,0"
+               HeightRequest="250"
+               WidthRequest="250" CornerRadius="125">
+
+        </Frame>
+
+        <Frame CornerRadius="0" BackgroundColor="#DCDCDC"
+               BorderColor="White"
+               Grid.Row="1" VerticalOptions="CenterAndExpand"
+               Margin="0,0,40,0"
+               >
+            <VerticalStackLayout Spacing="25">
+                <Label Text="SIGN IN" TextColor="Black" FontSize="28" FontAttributes="Bold" />
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Start">
+                    <Frame Padding="10" BorderColor="White" BackgroundColor="White" CornerRadius="0" WidthRequest="600" HorizontalOptions="Center">
+                        <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
+                            <Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />
+                            <handless:BorderlessEntry x:Name="Email"
+                                                  VerticalOptions="Center" Placeholder="Email"
+                                                  PlaceholderColor="Black" TextColor="Black"
+                                                  BackgroundColor="White" Grid.Column="1" />
+
+                        </Grid>
+
+                    </Frame>
+                    <Label x:Name="exceptionLabel" Text="" VerticalOptions="Center" TextColor="Red"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="20">
+                    <Frame Padding="10" BorderColor="White" BackgroundColor="White" CornerRadius="0" WidthRequest="600" HorizontalOptions="Center">
+                        <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
+                            <Image VerticalOptions="Center" Source="password.png" HeightRequest="20" WidthRequest="30" />
+                            <handless:BorderlessEntry x:Name="Password" VerticalOptions="Center" BackgroundColor="White" TextColor="Black" PlaceholderColor="Black" Placeholder="Password" IsPassword="True" Grid.Column="1" />
+                        </Grid>
+                    </Frame>
+                    <Label x:Name="exceptionPassword" Text="" VerticalOptions="Center" TextColor="Red"/>
+                </HorizontalStackLayout>
+                <Button CornerRadius="0" HeightRequest="60" Text="SIGN IN" FontSize="20" FontAttributes="Bold" Clicked="SignInClicked" WidthRequest="600" HorizontalOptions="Start"/>
+                <!--Lest create borderless entry -->
+                <Label FontAttributes="Bold" Text="Forgot Password?" TextColor="Gray" HorizontalTextAlignment="Start" />
+                <HorizontalStackLayout HorizontalOptions="Start" Spacing="10">
+                    <Label  FontAttributes="Bold" TextColor="Gray" Text="Don't have account?" VerticalTextAlignment="Center" />
+                    <Label  Text="SIGN UP" FontSize="18" 
+                           FontAttributes="Bold"
+                           TextColor="{x:StaticResource Primary}" />
+                    <HorizontalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_SignUP" />
+                    </HorizontalStackLayout.GestureRecognizers>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <Frame BackgroundColor="Orange" Grid.Row="2" 
+               VerticalOptions="EndAndExpand"
+               HorizontalOptions="StartAndExpand"
+               Padding="0" 
+               Margin="0,0,0,-180"
+               HeightRequest="250"
+               WidthRequest="250" CornerRadius="125">
+
+        </Frame>
+
+        <Frame BackgroundColor="#00BFFF" 
+               VerticalOptions="EndAndExpand"
+               Grid.Row="2" 
+               HorizontalOptions="StartAndExpand"
+               Padding="0" 
+               Margin="0,0,0,-200"
+               HeightRequest="250"
+               WidthRequest="250" CornerRadius="125">
+
+        </Frame>
+
+    </Grid>
+</ContentPage>

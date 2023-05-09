@@ -1,4 +1,7 @@
-﻿namespace CourseWork;
+﻿using CourseWork.Pages;
+using System.Diagnostics;
+
+namespace CourseWork;
 
 public partial class Search : ContentPage
 {
@@ -31,7 +34,20 @@ public partial class Search : ContentPage
     private void ChildSlider(object sender, ValueChangedEventArgs e)
     {
         int value = (int)e.NewValue;
-        ChildLAbel.Text = String.Format("Numbers of children {0}", value);
+        ChildLAbel.Text = String.Format("Numbers of younkeys {0}", value);
+    }
+
+    private void url(object sender, EventArgs e)
+    {
+        Uri uri = new Uri("https://traveltriangle.com/blog/best-summer-holiday-destinations-in-the-world/");
+        Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+    }
+
+    private async void FindTours(object sender, EventArgs e)
+    {
+        FindTourService FTS = new FindTourService();    
+        List<Tour> tours = FTS.GetTours(DeparturePicker.SelectedItem.ToString(), ResortPicker.SelectedItem.ToString());
+        await Shell.Current.GoToAsync(nameof(ToursPage));
     }
 }
 

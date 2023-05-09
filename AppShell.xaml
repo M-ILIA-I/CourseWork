@@ -5,27 +5,39 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CourseWork"
     >
+
+    <ShellContent
+        x:Name="profilePage"
+        Title="Profile"
+        ContentTemplate="{DataTemplate local:Profile}"
+        />
     
     <ShellContent
         Title="Search"
         ContentTemplate="{DataTemplate local:Search}"
         />
-   
 
-    
     <ShellContent
         Title="Help"
         ContentTemplate="{DataTemplate local:help}"
-        />
-     
-
-    <ShellContent
-        Title="Profile"
-        ContentTemplate="{DataTemplate local:Profile}"
         />
 
     <ShellContent
         Title="Tourhanter"
         ContentTemplate="{DataTemplate local:Tourhanter}"/>
+
+    <ShellContent
+        FlyoutItemIsVisible="False"
+        Title="SignInPage"
+        ContentTemplate="{DataTemplate local:SignInPage}"
+        Route="SignIn"/>
+    
+    <ShellContent 
+        FlyoutItemIsVisible="False"
+        Title="SignUpPage"
+        ContentTemplate="{DataTemplate local:SignUpPages}"
+        Route="SignUp"/>
+
+   
 
 </Shell>

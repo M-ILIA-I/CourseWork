@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseWork.UserPage"
+             Title="UserPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <BoxView Color="#00BFFF" Grid.Row="0"/>
+        <BoxView Color="#F5F5F5" Grid.Row="1"/>
+        <BoxView Color="#00BFFF" Grid.Row="1" HeightRequest="180" Margin="0,0,0,600"/>
+        <VerticalStackLayout Grid.Row="1">
+            <Frame BackgroundColor="Transparent" BorderColor="Transparent" WidthRequest="300" HeightRequest="300" Margin="0,-50,0,0">
+                <Image Source="user.png" WidthRequest="250" HeightRequest="250"/>
+            </Frame>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,20">
+                <Image Source="user.png" WidthRequest="35" HeightRequest="35"/>
+                <Button Text="Profile" WidthRequest="600" HorizontalOptions="Center" TextColor="Black" Clicked="VisitProfile"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,0,0,20">
+                <Image Source="train.png" WidthRequest="30" HeightRequest="30"/>
+                <Button Text="Your orders" WidthRequest="600" HorizontalOptions="Center" TextColor="Black" Clicked="ShowTours"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Margin="0,0,0,0" HorizontalOptions="Center">
+                <Image Source="settings.png" HeightRequest="30" WidthRequest="30" Margin="0,0,0,0"/>
+                <Button Text="Settings" WidthRequest="600"  TextColor="Black" Clicked="VisitSettings"/>
+
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

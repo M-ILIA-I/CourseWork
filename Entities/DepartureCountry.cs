@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 namespace CourseWork
 {
     [Table ("DepartureCountries")]
-    public class DepartureCountry
+    public class DepartureCountry : Country
     {
         public int Id { get; set; }
-        public string Country { get; set; }
-        public string Capital { get; set; }
     }
 }

@@ -3,10 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CourseWork.help"
              Title="help">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <BoxView Grid.Row="0" Color="#00BFFF"/>
+        <BoxView Grid.Row="1" Color="#F5F5F5"/>
+        <BoxView Grid.Row="2" Color="#00BFFF"/>
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+            <Label TextColor="Black" FontAttributes="Bold" FontSize="40" LineBreakMode="CharacterWrap"
+            Text="As a travel agency, we strive to offer our clients only the most interesting and diverse trips. Our team consists of highly qualified specialists who will help you choose the best route and book all the necessary services. We guarantee support throughout the trip and are ready to solve any issues that arise for your comfort and satisfaction from the trip."
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

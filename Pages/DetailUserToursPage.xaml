@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseWork.Pages.DetailUserToursPage"
+             Title="DetailUserToursPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <BoxView Color="#00BFFF" Grid.Row="0"/>
+        <BoxView Color="#F5F5F5" Grid.Row="1"/>
+        <BoxView Color="#00BFFF" Grid.Row="1" HeightRequest="180" Margin="0,0,0,600"/>
+        <Image Source="user.png" Grid.Row="1" HeightRequest="200" WidthRequest="200" Margin="0,0,0,420"/>
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+            <Label 
+                Text="Here should be your tours"
+                FontSize="40"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                TextColor="Black"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
