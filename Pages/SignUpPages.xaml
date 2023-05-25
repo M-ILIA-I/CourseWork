@@ -9,7 +9,7 @@
     <Grid RowDefinitions="1*,8*,1*">
         <Frame BackgroundColor="Orange" Grid.Row="0" HorizontalOptions="EndAndExpand"
                Padding="0" 
-               Margin="0,-80,-80,0"
+               Margin="100,0,-80,0"
                HeightRequest="250"
                WidthRequest="250" CornerRadius="125">
 
@@ -17,52 +17,52 @@
 
         <Frame BackgroundColor="#00BFFF" Grid.Row="0" HorizontalOptions="EndAndExpand"
                Padding="0" 
-               Margin="0,-120,-120,0"
+               Margin="500,-60,-120,0"
                HeightRequest="250"
-               WidthRequest="250" CornerRadius="125">
+               WidthRequest="400" CornerRadius="125">
 
         </Frame>
 
         <Frame ZIndex="1" CornerRadius="0" BackgroundColor="#DCDCDC" BorderColor="Transparent"
                Grid.Row="1" VerticalOptions="CenterAndExpand"
-               Margin="0,0,160,0"
+               WidthRequest="400"
+               Margin="0,0,20,0"
                >
             <ScrollView>
-                <VerticalStackLayout Spacing="25">
-                    <Label Text="SIGN UP" TextColor="Black" FontSize="28" FontAttributes="Bold" />
-
-                    <Frame Padding="10" BorderColor="Transparent" BackgroundColor="#F5F5F5" CornerRadius="0">
+                <VerticalStackLayout Spacing="25" Margin="0,40,0,0">
+                    <Label Text="SIGN UP" TextColor="Black" FontSize="28" FontAttributes="Bold" Margin="0,0,0,0" />
+                    <Frame Padding="10" BorderColor="Transparent" BackgroundColor="#F5F5F5" CornerRadius="0" WidthRequest="200" HorizontalOptions="Start">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
                             <Image VerticalOptions="Center" Source="user.png" HeightRequest="25" WidthRequest="25" />
-                            <handless:BorderlessEntry VerticalOptions="Center" BackgroundColor="#F5F5F5" PlaceholderColor="Black" Placeholder="Name" Grid.Column="1" />
+                            <handless:BorderlessEntry x:Name="Name" VerticalOptions="Center" BackgroundColor="#F5F5F5" PlaceholderColor="Black" TextColor="Black" Placeholder="Name" Grid.Column="1"/>
                         </Grid>
                     </Frame>
-
-                    <Frame Padding="10" BorderColor="Transparent" BackgroundColor="#F5F5F5" CornerRadius="0">
+                    <Label Text="" TextColor="Red" x:Name="emEror" IsVisible="False"/> 
+                    <Frame Padding="10" BorderColor="Transparent" BackgroundColor="#F5F5F5" CornerRadius="0" WidthRequest="200" HorizontalOptions="Start">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
                             <Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />
-                            <handless:BorderlessEntry VerticalOptions="Center" BackgroundColor="#F5F5F5" PlaceholderColor="Black" Placeholder="Email" Grid.Column="1" />
+                            <handless:BorderlessEntry x:Name="email" VerticalOptions="Center" TextColor="Black" BackgroundColor="#F5F5F5" PlaceholderColor="Black" Placeholder="Email" Grid.Column="1" />
                         </Grid>
                     </Frame>
 
-                    <Frame Padding="10" BorderColor="Transparent" BackgroundColor="#F5F5F5" CornerRadius="0">
+                    <Frame Padding="10" BorderColor="Transparent" BackgroundColor="#F5F5F5" CornerRadius="0" WidthRequest="200" HorizontalOptions="Start">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
                             <Image VerticalOptions="Center" Source="mobile.png" HeightRequest="25" WidthRequest="25" />
-                            <handless:BorderlessEntry VerticalOptions="Center" PlaceholderColor="Black" BackgroundColor="#F5F5F5" Placeholder="Mobile Number" Grid.Column="1" />
+                            <handless:BorderlessEntry x:Name="phoneNum" VerticalOptions="Center" TextColor="Black" PlaceholderColor="Black" BackgroundColor="#F5F5F5" Placeholder="Mobile Number" Grid.Column="1" />
                         </Grid>
                     </Frame>
 
-                    <Frame Padding="10" BorderColor="Transparent" BackgroundColor="#F5F5F5" CornerRadius="0">
+                    <Frame Padding="10" BorderColor="Transparent" BackgroundColor="#F5F5F5" CornerRadius="0" WidthRequest="200" HorizontalOptions="Start">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
                             <Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25" />
-                            <handless:BorderlessEntry VerticalOptions="Center" BackgroundColor="#F5F5F5" PlaceholderColor="Black" Placeholder="Password" IsPassword="True" Grid.Column="1" />
+                            <handless:BorderlessEntry x:Name="password" VerticalOptions="Center" TextColor="Black" BackgroundColor="#F5F5F5" PlaceholderColor="Black" Placeholder="Password" IsPassword="True" Grid.Column="1" />
                         </Grid>
                     </Frame>
 
-                    <Button CornerRadius="0" HeightRequest="50" Text="SIGN UP" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" WidthRequest="300"/>
+                    <Button CornerRadius="0" HeightRequest="50" Text="SIGN UP" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,0" WidthRequest="200" Clicked="SignUp"/>
 
                     <HorizontalStackLayout Spacing="10">
-                        <Label  FontAttributes="Bold" TextColor="Gray" Text="already have a account?" VerticalTextAlignment="Center" />
+                        <Label  FontAttributes="Bold" TextColor="Gray" Text="already have a account?" FontSize="15"  VerticalTextAlignment="Center" />
                         <Label  Text="SIGN IN" FontSize="18" 
                            FontAttributes="Bold"
                            TextColor="{x:StaticResource Primary}" />
@@ -78,7 +78,7 @@
                VerticalOptions="EndAndExpand"
                HorizontalOptions="StartAndExpand"
                Padding="0" 
-               Margin="0,0,0,-180"
+               Margin="10,0,290,-100"
                HeightRequest="250"
                WidthRequest="250" CornerRadius="125">
 
@@ -89,7 +89,7 @@
                Grid.Row="2" 
                HorizontalOptions="StartAndExpand"
                Padding="0" 
-               Margin="0,0,0,-200"
+               Margin="0,0,200,-300"
                HeightRequest="250"
                WidthRequest="250" CornerRadius="125">
 

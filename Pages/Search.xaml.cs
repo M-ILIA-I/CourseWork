@@ -1,28 +1,26 @@
 ﻿using CourseWork.Pages;
+using CourseWork.ViewModel;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 
 namespace CourseWork;
 
 public partial class Search : ContentPage
 {
-	public Search()
+    FindTourService fts;
+    public ObservableCollection<Tour> tours;
+
+    public Search(FindToursViewModel vm, FindTourService Fts)
 	{
 		InitializeComponent();
-	}
+        BindingContext = vm;
+        fts = Fts;
+    }
 
     private void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
     {
 		int value = (int)e.NewValue;
 		DaysLAbel.Text = String.Format("Numbers of days {0}", value);
-    }
-
-    private void PickerPulingData(object sender, EventArgs e)
-    {
-        ResortDBService resortDBService = new ResortDBService();
-        DepartureDBService departureDBService = new DepartureDBService();
-
-        ResortPicker.ItemsSource = resortDBService.GetResortCapitals();
-        DeparturePicker.ItemsSource = departureDBService.GetDepartureCapitals();
     }
 
     private void AdultSlider(object sender, ValueChangedEventArgs e)
@@ -45,8 +43,8 @@ public partial class Search : ContentPage
 
     private async void FindTours(object sender, EventArgs e)
     {
-        FindTourService FTS = new FindTourService();    
-        List<Tour> tours = FTS.GetTours(DeparturePicker.SelectedItem.ToString(), ResortPicker.SelectedItem.ToString());
+        Preferences.Set("DC", DeparturePicker.SelectedItem.ToString());
+        Preferences.Set("AC", ResortPicker.SelectedItem.ToString());
         await Shell.Current.GoToAsync(nameof(ToursPage));
     }
 }

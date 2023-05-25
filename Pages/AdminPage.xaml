@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseWork.Pages.AdminPage"
+             Title="AdminPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        
+        <BoxView Color="#F5F5F5" Grid.Row="1" Margin="0,0,0,0" HorizontalOptions="CenterAndExpand"/>
+        <BoxView Color="#00BFFF" Grid.Row="2"/>
+        <Frame Grid.Row="1" Margin="0,0,0,0">
+            <Grid RowDefinitions="*,*,*,*,*,*,*" Margin="0,30,0,0">
+                <Frame Grid.Row="0" Margin="0,20,0,20" HeightRequest="60">
+                    <Entry x:Name="DD" TextColor="Black" HeightRequest="120" Placeholder="Departure date" />
+                </Frame>
+                <Frame Grid.Row="1" Margin="0,20,0,20" HeightRequest="60">
+                    <Entry x:Name="AD" Grid.Row="1" TextColor="Black" HeightRequest="120" Placeholder="Arriving date"/>
+                </Frame>
+                <Frame Grid.Row="2" Margin="0,20,0,20" HeightRequest="60">
+                    <Entry x:Name="DC" Grid.Row="2" TextColor="Black" HeightRequest="120" Placeholder="Departure country"/>
+                </Frame>
+                <Frame Grid.Row="3" Margin="0,20,0,20" HeightRequest="60">
+                    <Entry x:Name="AC" Grid.Row="3" TextColor="Black" HeightRequest="120" Placeholder="Arriving country"/>
+                </Frame>
+                <Frame Grid.Row="4" Margin="0,20,0,20" HeightRequest="60">
+                    <Entry x:Name="PQ" Grid.Row="4" TextColor="Black" HeightRequest="120" Placeholder="Person quantity"/>
+                </Frame>
+                <Frame Grid.Row="5" Margin="0,20,0,20" HeightRequest="60">
+                    <Entry x:Name="T" Grid.Row="5" TextColor="Black" HeightRequest="120" Placeholder="Transport"/>
+                </Frame>
+                <Frame Grid.Row="6" Margin="0,20,0,20" HeightRequest="60">
+                    <Entry x:Name="P" Grid.Row="6" TextColor="Black" HeightRequest="120" Placeholder="Price"/>
+                </Frame>
+            </Grid>
+        </Frame>
+        <BoxView Color="#00BFFF" Grid.Row="0" CornerRadius="0,0,30,30" HeightRequest="100"/>
+        <Label
+            Text="Add tour"
+            HorizontalOptions="Center"
+            Grid.Row="0"
+            Margin="0,20,0,0"
+            TextColor="Black"
+            FontAttributes="Bold"
+            FontSize="20"
+            VerticalOptions="Center"
+            />
+        <Button BackgroundColor="Orange"
+                Text="Add"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                Grid.Row="2"
+                WidthRequest="200"
+                HeightRequest="50"
+                BorderColor="Black"
+                BorderWidth="2"
+                TextColor="Black"
+                FontSize="18"
+                Clicked="Add"/>
+    </Grid>
+
+</ContentPage>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:SU="clr-namespace:CourseWork"
              x:Class="CourseWork.Pages.DetailUserPage"
-             Title="DetailUserPage">
+             Title="DetailUserPage"
+             >
 
     <Grid>
         <Grid.RowDefinitions>
@@ -13,25 +15,35 @@
         <BoxView Color="#F5F5F5" Grid.Row="1"/>
         <BoxView Color="#00BFFF" Grid.Row="1" HeightRequest="180" Margin="0,0,0,600"/>
         <Image Source="user.png" Grid.Row="1" HeightRequest="200" WidthRequest="200" Margin="0,0,0,420"/>
-        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
-            <Label 
-                Text="UserName"
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Margin="0,50,0,0" Spacing="10">
+            <HorizontalStackLayout VerticalOptions="Center" 
+                HorizontalOptions="Center" Spacing="20" >
+                <Label
+                Text="{Binding name}"
+                x:Name="userName"
+                TextColor="Black"
+                FontSize="40"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" 
+                HorizontalOptions="Center">
+                <Label 
+                x:Name="userEmail"
+                Text="{Binding email}"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center"
                 TextColor="Black"
                 FontSize="40"/>
-            <Label 
-                Text="PhoneNumber"
+            </HorizontalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" 
+                HorizontalOptions="Center">
+                <Label
+                x:Name="userPhoneNumber"
+                Text="{Binding phoneNumber}"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center"
                 TextColor="Black"
                 FontSize="40"/>
-            <Label 
-                Text="Email"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center"
-                TextColor="Black"
-                FontSize="40"/>
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </Grid>
 </ContentPage>

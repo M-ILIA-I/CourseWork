@@ -5,33 +5,36 @@
              Title="SignInPage"
              Shell.NavBarIsVisible="False"
              xmlns:handless="clr-namespace:CourseWork"
-             Background="#F5F5F5">
-    <Grid RowDefinitions="1*,8*,1*">
-        <Frame BackgroundColor="Orange" Grid.Row="0" HorizontalOptions="EndAndExpand"
+             Background="#F5F5F5"
+             Appearing="ContentPage_Appearing" >
+    <Grid RowDefinitions="*,5*,1*">
+        <Frame BackgroundColor="Orange" Grid.Row="0" HorizontalOptions="End"
                Padding="0" 
-               Margin="0,-80,-80,0"
-               HeightRequest="250"
-               WidthRequest="250" CornerRadius="125">
+               Margin="140,-90,-20,-20"
+               HeightRequest="20"
+               WidthRequest="20" CornerRadius="100">
 
         </Frame>
 
-        <Frame BackgroundColor="#00BFFF" Grid.Row="0" HorizontalOptions="EndAndExpand"
+        <Frame BackgroundColor="#00BFFF" Grid.Row="0" HorizontalOptions="End"
                Padding="0" 
-               Margin="0,-120,-120,0"
-               HeightRequest="250"
-               WidthRequest="250" CornerRadius="125">
+               Margin="140,-60,-20,10"
+               HeightRequest="20"
+               WidthRequest="20" CornerRadius="100">
 
         </Frame>
 
         <Frame CornerRadius="0" BackgroundColor="#DCDCDC"
                BorderColor="White"
-               Grid.Row="1" VerticalOptions="CenterAndExpand"
+               WidthRequest="400"
+               
+               Grid.Row="1" VerticalOptions="Center"
                Margin="0,0,40,0"
                >
-            <VerticalStackLayout Spacing="25">
-                <Label Text="SIGN IN" TextColor="Black" FontSize="28" FontAttributes="Bold" />
-                <HorizontalStackLayout Spacing="20" HorizontalOptions="Start">
-                    <Frame Padding="10" BorderColor="White" BackgroundColor="White" CornerRadius="0" WidthRequest="600" HorizontalOptions="Center">
+            <VerticalStackLayout Spacing="25" Margin="0,40,0,0">
+                <Label Text="SIGN IN" TextColor="Black" FontSize="28" FontAttributes="Bold" Margin="20,0,0,0"/>
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Start" Margin="10,0,0,0">
+                    <Frame Padding="10" BorderColor="White" BackgroundColor="White" CornerRadius="0" WidthRequest="350" HorizontalOptions="Center">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
                             <Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />
                             <handless:BorderlessEntry x:Name="Email"
@@ -44,9 +47,8 @@
                     </Frame>
                     <Label x:Name="exceptionLabel" Text="" VerticalOptions="Center" TextColor="Red"/>
                 </HorizontalStackLayout>
-
-                <HorizontalStackLayout Spacing="20">
-                    <Frame Padding="10" BorderColor="White" BackgroundColor="White" CornerRadius="0" WidthRequest="600" HorizontalOptions="Center">
+                <HorizontalStackLayout Spacing="20" Margin="10,0,0,0">
+                    <Frame Padding="10" BorderColor="White" BackgroundColor="White" CornerRadius="0" WidthRequest="350" HorizontalOptions="Center">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
                             <Image VerticalOptions="Center" Source="password.png" HeightRequest="20" WidthRequest="30" />
                             <handless:BorderlessEntry x:Name="Password" VerticalOptions="Center" BackgroundColor="White" TextColor="Black" PlaceholderColor="Black" Placeholder="Password" IsPassword="True" Grid.Column="1" />
@@ -54,11 +56,11 @@
                     </Frame>
                     <Label x:Name="exceptionPassword" Text="" VerticalOptions="Center" TextColor="Red"/>
                 </HorizontalStackLayout>
-                <Button CornerRadius="0" HeightRequest="60" Text="SIGN IN" FontSize="20" FontAttributes="Bold" Clicked="SignInClicked" WidthRequest="600" HorizontalOptions="Start"/>
+                <Button CornerRadius="0" HeightRequest="60" Text="SIGN IN" FontSize="20" FontAttributes="Bold" Clicked="SignInClicked" WidthRequest="200" HorizontalOptions="Center"/>
                 <!--Lest create borderless entry -->
-                <Label FontAttributes="Bold" Text="Forgot Password?" TextColor="Gray" HorizontalTextAlignment="Start" />
+                <Label FontAttributes="Bold" FontSize="16" Text="Forgot Password?" TextColor="Gray" HorizontalTextAlignment="Start" Margin="10,0,0,0" />
                 <HorizontalStackLayout HorizontalOptions="Start" Spacing="10">
-                    <Label  FontAttributes="Bold" TextColor="Gray" Text="Don't have account?" VerticalTextAlignment="Center" />
+                    <Label  FontAttributes="Bold" FontSize="16" TextColor="Gray" Text="Don't have account?" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
                     <Label  Text="SIGN UP" FontSize="18" 
                            FontAttributes="Bold"
                            TextColor="{x:StaticResource Primary}" />
@@ -74,18 +76,18 @@
                VerticalOptions="EndAndExpand"
                HorizontalOptions="StartAndExpand"
                Padding="0" 
-               Margin="0,0,0,-180"
+               Margin="0,0,100,-80"
                HeightRequest="250"
                WidthRequest="250" CornerRadius="125">
 
         </Frame>
 
         <Frame BackgroundColor="#00BFFF" 
-               VerticalOptions="EndAndExpand"
+               VerticalOptions="End"
                Grid.Row="2" 
                HorizontalOptions="StartAndExpand"
                Padding="0" 
-               Margin="0,0,0,-200"
+               Margin="0,-50,120,-200"
                HeightRequest="250"
                WidthRequest="250" CornerRadius="125">
 

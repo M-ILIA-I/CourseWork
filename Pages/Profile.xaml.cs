@@ -6,6 +6,10 @@ public partial class Profile : ContentPage
 {
 	public Profile()
 	{
+        if(Preferences.Get("UserEmail", null) != null)
+        {
+            Shell.Current.GoToAsync(nameof(UserPage));
+        }
 		InitializeComponent();
 	}
 
@@ -18,4 +22,5 @@ public partial class Profile : ContentPage
     {
         Shell.Current.GoToAsync("//SignUp");
     }
+
 }

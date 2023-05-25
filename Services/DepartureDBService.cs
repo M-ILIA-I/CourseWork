@@ -18,7 +18,8 @@ namespace CourseWork
         // enable multi-threaded database access
         SQLite.SQLiteOpenFlags.SharedCache;
 
-        static string dbPath = @"D:\Coursework\CourseWork\DB\DB.db";
+        //static string dbPath = @"D:\Coursework\CourseWork\DB\DB.db";
+        static string dbPath = Path.Combine(Path.GetTempPath(), "DB.db");
         public IEnumerable<DepartureCountry> GetDepartureCountries()
         {
             SQLiteConnection db = new SQLiteConnection(dbPath, Flags);

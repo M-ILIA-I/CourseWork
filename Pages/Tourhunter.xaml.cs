@@ -1,25 +1,25 @@
+using CourseWork.Pages;
 using CourseWork.ViewModel;
 
-namespace CourseWork.Pages;
+namespace CourseWork;
 
-public partial class ToursPage : ContentPage
+public partial class Tourhunter : ContentPage
 {
-
-	UserDBService us = new();
-    public ToursPage(FindTourService vm, UserDBService Us)
-	{ 
+    UserDBService us;
+	public Tourhunter(FindToursViewModel vm, UserDBService US)
+	{
 		InitializeComponent();
-		cv.ItemsSource = vm.GetFilteredTours(Preferences.Get("DC","none"), Preferences.Get("AC", "none"));
-		us = Us;
+		BindingContext = vm;
+        us = US;
 	}
 
     private async void Lol(object sender, EventArgs e)
     {
-       
         string alert = await DisplayActionSheet("Are you shure?", "Yes", "No");
         if (alert == "Yes")
         {
-            var user = us.GetCurrentUSer();  
+
+            var user = us.GetCurrentUSer();
             if (user.TourId != null)
             {
                 var a = user.TourId.Split(' ').ToList();
@@ -29,13 +29,17 @@ public partial class ToursPage : ContentPage
                     user.TourId += b + " ";
                     us.updateUser(user);
                 }
+                
             }
             else
             {
                 var b = (cv.SelectedItem as Tour).Id.ToString();
                 user.TourId += b + " ";
                 us.updateUser(user);
+                
             }
         }
     }
+
+            
 }

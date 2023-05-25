@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourseWork
+namespace CourseWork.Services
 {
-    public class ResortDBService
+    public class AddTourService
     {
         static SQLiteOpenFlags Flags =
         // open the database in read/write mode
@@ -19,23 +19,13 @@ namespace CourseWork
 
         //static string dbPath = @"D:\Coursework\CourseWork\DB\DB.db";
         static string dbPath = Path.Combine(Path.GetTempPath(), "DB.db");
-        public IEnumerable<ResortCountry> GetResortCountries()
+
+        public void AddTour(Tour tour)
         {
             SQLiteConnection db = new SQLiteConnection(dbPath, Flags);
-
-            return from countries in db.Table<ResortCountry>()
-                   select countries;
-        }
-
-        public List<string> GetResortCapitals()
-        {
-            List<string> capitals = new List<string>();
-
-            foreach (ResortCountry dc in GetResortCountries())
-            {
-                capitals.Add(dc.Capital);
-            }
-            return capitals;
+            FindTourService fts = new();
+            if (!fts.GetTours().ToList<Tour>().Contains(tour))
+                db.Insert(tour);
         }
     }
 }

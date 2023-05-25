@@ -2,23 +2,69 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CourseWork.Pages.DetailUserToursPage"
-             Title="DetailUserToursPage">
+             Title="DetailUserToursPage" Appearing="ContentPage_Appearing"
+             >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
         <BoxView Color="#00BFFF" Grid.Row="0"/>
-        <BoxView Color="#F5F5F5" Grid.Row="1"/>
-        <BoxView Color="#00BFFF" Grid.Row="1" HeightRequest="180" Margin="0,0,0,600"/>
-        <Image Source="user.png" Grid.Row="1" HeightRequest="200" WidthRequest="200" Margin="0,0,0,420"/>
-        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
-            <Label 
-                Text="Here should be your tours"
-                FontSize="40"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" 
-                TextColor="Black"/>
-        </VerticalStackLayout>
+        <BoxView Color="white" Grid.Row="1"/>
+        <BoxView Color="#00BFFF" Grid.Row="2"/>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout>
+                <CollectionView x:Name="cv" ItemsSource="{Binding tours}" SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" Margin="0,10,0,0">
+                                        <Label Text="{Binding departureCountry}" Grid.Column="2"
+                                                       TextColor="Black"
+                                                       HorizontalOptions="Center"
+                                                       FontAttributes="Bold"
+                                                       FontSize="32"/>
+                                        <Label Text="{Binding arrivingCountry}"
+                                                       Grid.Column="2"
+                                                       TextColor="Black"
+                                                       FontAttributes="Bold"
+                                                       FontSize="32"
+                                                       HorizontalOptions="Center"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" Margin="0,10,0,0">
+                                            <Label Text="{Binding departureDate}"
+                                                   Grid.Row="4" TextColor="Black"
+                                                   HorizontalOptions="Center"
+                                                   FontAttributes="Bold"
+                                                       FontSize="16"/>
+                                            <Label Text="{Binding arrivingDate}"
+                                                   Grid.Column="2" TextColor="Black"
+                                                   HorizontalOptions="Center"
+                                                   FontAttributes="Bold"
+                                                       FontSize="16"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,10,0,0" Spacing="10">
+                                            <Label Text="{Binding transport}" Grid.Column="2" TextColor="Black"
+                                                   HorizontalOptions="Center"
+                                                   FontAttributes="Bold"
+                                                       FontSize="20"/>
+
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+        <Button BackgroundColor="Orange" WidthRequest="200" Grid.Row="2"
+                FontAttributes="Bold"
+                FontSize="17"
+                TextColor="Black"
+                Clicked="DeleteOrder"
+                BorderColor="Black" BorderWidth="2" HeightRequest="40" Text="Delete order"/>
     </Grid>
 </ContentPage>

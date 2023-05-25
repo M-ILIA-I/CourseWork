@@ -12,13 +12,14 @@ public partial class SignInPage : ContentPage
         await Shell.Current.GoToAsync("//SignUp");
     }
 
-    private void SignInClicked(object sender, EventArgs e)
+    private async void SignInClicked(object sender, EventArgs e)
     {
         string emailException = "Wrong email reference";
         string existException = "This user are don't exists";
         UserDBService userDBService = new();
         ParseEmail parseEmail = new();
         ParsePassword parsePassword = new();
+        var users = userDBService.GetUsers();
         var emails = userDBService.GetEmails();
         if (!parseEmail.ParseUserEmail(Email.Text))
         {
@@ -30,16 +31,32 @@ public partial class SignInPage : ContentPage
         }
         else
         {
-            exceptionLabel.Text = "";
+            if (!parsePassword.Parse(Password.Text))
+                exceptionPassword.Text = "Exception";
+            else
+            {
+                foreach(User u in users)
+                {
+                    if(u.UserEmail == Email.Text)
+                    {
+                        Preferences.Set("UserName", u.UserName);
+                        Preferences.Set("UserEmail", u.UserEmail);
+                        Preferences.Set("UserPhoneNumber", u.UserPhoneNumber);
+                    }    
+                }
+                await Shell.Current.GoToAsync(nameof(UserPage));
+            }
         }
 
-        if (parsePassword.Parse(Password.Text))
-            exceptionPassword.Text = "Exception";
-        else
-            exceptionPassword.Text = "Succes";
+        
+       
 
-        Shell.Current.GoToAsync(nameof(UserPage));
+        
         
     }
 
+    private void ContentPage_Appearing(object sender, EventArgs e)
+    {
+
+    }
 }

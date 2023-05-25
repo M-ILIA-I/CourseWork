@@ -10,8 +10,8 @@ namespace CourseWork
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public string DepartureCountry { get; private set; }
-        public string ArrivingCountry { get; private set; }
-        public int Price { get; private set; }
+        public string DepartureCountry { get; set; }
+        public string ArrivingCountry { get; set; }
+        public int Price { get; set; }
     }
 }

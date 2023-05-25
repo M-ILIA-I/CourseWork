@@ -13,7 +13,10 @@ namespace CourseWork
         public bool Parse(string number)
         {
             Regex regex = new Regex(@"^/+375(29|33)[0-9]{7}");
-            return true;
+            if (regex.IsMatch(number))
+                return true;
+            
+            else { return false; }
         }
     }
 }

@@ -6,4 +6,10 @@ public partial class DetailSettingsPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void LogOut(object sender, EventArgs e)
+    {
+		Preferences.Set("UserEmail", null);
+		Shell.Current.GoToAsync("//Profile");
+    }
 }

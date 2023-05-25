@@ -12,9 +12,9 @@
         <BoxView Color="#F5F5F5" Grid.Row="1"/>
         <BoxView Color="#00BFFF" Grid.Row="1" HeightRequest="180" Margin="0,0,0,600"/>
         <Image Source="user.png" Grid.Row="1" HeightRequest="200" WidthRequest="200" Margin="0,0,0,420"/>
-        <HorizontalStackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,200,0,0" Spacing="10">
-            <Button Text="Logout" BackgroundColor="Orange" TextColor="Black" WidthRequest="200"/>
-            <Button Text="Change photo" BackgroundColor="#00BFFF" TextColor="Black" WidthRequest="200"/>
-        </HorizontalStackLayout>
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,200,0,0" Spacing="10">
+            <Button Text="Logout" BackgroundColor="Orange" FontSize="20" FontAttributes="Bold" TextColor="Black" WidthRequest="200" BorderColor="Black" BorderWidth="2" Clicked="LogOut"/>
+            <Button Text="Change photo" BackgroundColor="#00BFFF" TextColor="Black" FontSize="20" FontAttributes="Bold" BorderColor="Black" BorderWidth="2" WidthRequest="200"/>
+        </VerticalStackLayout>
     </Grid>
 </ContentPage>

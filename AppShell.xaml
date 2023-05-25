@@ -5,39 +5,54 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CourseWork"
     >
+    <FlyoutItem>
 
+        <ShellContent
+            x:Name="userPage"
+            FlyoutItemIsVisible="True"
+            Title="Profile"
+            Icon="user.png"
+            ContentTemplate="{DataTemplate local:UserPage}"
+            Route="User"/>
+
+        <ShellContent
+            Title="Search"
+            Icon="hotel.png"
+            ContentTemplate="{DataTemplate local:Search}"/>
+
+        <ShellContent
+            Title="About"
+            Icon="message.png"
+            ContentTemplate="{DataTemplate local:help}"
+        />
+        
+        <ShellContent
+        FlyoutItemIsVisible="False"
+        Title="Tourhunter"
+        Icon="discount.png"
+        ContentTemplate="{DataTemplate local:Tourhunter}"/>
+    </FlyoutItem>
+
+    
     <ShellContent
+        FlyoutItemIsVisible="False"
         x:Name="profilePage"
         Title="Profile"
         ContentTemplate="{DataTemplate local:Profile}"
+        Route="Profile"
         />
-    
-    <ShellContent
-        Title="Search"
-        ContentTemplate="{DataTemplate local:Search}"
-        />
-
-    <ShellContent
-        Title="Help"
-        ContentTemplate="{DataTemplate local:help}"
-        />
-
-    <ShellContent
-        Title="Tourhanter"
-        ContentTemplate="{DataTemplate local:Tourhanter}"/>
-
-    <ShellContent
+                
+        <ShellContent
         FlyoutItemIsVisible="False"
         Title="SignInPage"
         ContentTemplate="{DataTemplate local:SignInPage}"
         Route="SignIn"/>
-    
-    <ShellContent 
+
+        <ShellContent 
         FlyoutItemIsVisible="False"
         Title="SignUpPage"
         ContentTemplate="{DataTemplate local:SignUpPages}"
         Route="SignUp"/>
 
-   
-
+    
 </Shell>

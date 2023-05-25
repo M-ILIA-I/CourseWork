@@ -22,30 +22,30 @@
         <BoxView Grid.Row="4" Color="#00BFFF"/>
         <Label Text="HERE YOU CAN" TextColor="Black" FontAttributes="Bold" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
 
-        <HorizontalStackLayout Margin="0,0,60,0"  Grid.Row="1" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
-            <Frame BackgroundColor="White" CornerRadius="160" HeightRequest="80" >
+        <HorizontalStackLayout Margin="10,20,0,0"  Grid.Row="1" Spacing="10" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100">
+            <Frame BackgroundColor="White" CornerRadius="100" WidthRequest="100">
                 <Image Source="message.png" HeightRequest="35" WidthRequest="35"/>
             </Frame>
-            <Label Text="Check you orders and documents" Background="White" TextColor="Black" Margin="0,30,0,0"/>
+            <Label Text="Check you orders and documents" Background="White" TextColor="Black" Margin="0,40,0,0" FontSize="15" FontAttributes="Bold"/>
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout Margin="0,0,60,0" Grid.Row="2" Spacing="20" HorizontalOptions="Center"  VerticalOptions="Center">
-            <Frame BackgroundColor="White" CornerRadius="160" HeightRequest="80" Margin="20,0,0,0">
+        <HorizontalStackLayout Margin="10,20,0,40" Grid.Row="2" Spacing="10" HorizontalOptions="Start"  VerticalOptions="Center" HeightRequest="100">
+            <Frame BackgroundColor="White" CornerRadius="100" WidthRequest="100" Margin="0,0,0,0">
                 <Image Source="discount.png" HeightRequest="35" WidthRequest="35"/>
             </Frame>
-            <Label Text="Save a discount on the following trips"  Background="White" TextColor="Black" Margin="0,30,0,0"/>
+            <Label Text="Save a discount on the following trips"  Background="White" TextColor="Black" Margin="0,40,0,0" FontAttributes="Bold" FontSize="15"/>
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout Margin="0,0,60,0" Grid.Row="3"  HorizontalOptions="Center"  VerticalOptions="Center">
-            <Frame BackgroundColor="White" CornerRadius="160" HeightRequest="80" Margin="0,0,50,0" >
+        <HorizontalStackLayout Margin="10,0,0,50" Grid.Row="3"  HorizontalOptions="Start"  VerticalOptions="Start" HeightRequest="140" Spacing="10">
+            <Frame BackgroundColor="White" CornerRadius="100" HeightRequest="80" Margin="0,0,0,40" WidthRequest="100">
                 <Image Source="settings.png" HeightRequest="35" WidthRequest="35"/>
             </Frame>
-            <Label Text="Manage mailing settings"  Background="White" TextColor="Black" Margin="0,30,30,0"/>
+            <Label Text="Manage mailing settings"  Background="White" TextColor="Black" Margin="0,0,0,40" VerticalOptions="Center" FontAttributes="Bold" FontSize="15"/>
         </HorizontalStackLayout>
 
         <VerticalStackLayout Grid.Row="4" VerticalOptions="Center" Spacing="5" WidthRequest="400">
-            <Button Text="Sign in" Background="Orange" Clicked="SignInButton"/>
-            <Button Text="Sign up" Clicked="SignUpButton"/>
+            <Button Text="Sign in" Background="Orange" Clicked="SignInButton" WidthRequest="300" HeightRequest="50" TextColor="Black" FontAttributes="Bold" FontSize="15"/>
+            <Button Text="Sign up" Clicked="SignUpButton" WidthRequest="300" HeightRequest="50" BackgroundColor="AliceBlue" TextColor="Black" FontAttributes="Bold" FontSize="15"/>
         </VerticalStackLayout>
     </Grid>
     

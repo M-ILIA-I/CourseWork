@@ -13,7 +13,6 @@ namespace CourseWork
         {
             if (password.Equals(null))
                 return false;
-            
             else
                 return true;
         }

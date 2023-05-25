@@ -1,9 +1,14 @@
+
+using CourseWork.ViewModel;
+
 namespace CourseWork.Pages;
 
 public partial class DetailUserPage : ContentPage
 {
-	public DetailUserPage()
+    public DetailUserPage(UserPageViewModel vm)
 	{
-		InitializeComponent();
+        InitializeComponent();
+        BindingContext = vm;
 	}
+    
 }
